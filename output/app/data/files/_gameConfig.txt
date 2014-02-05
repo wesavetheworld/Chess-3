@@ -1,0 +1,13 @@
+﻿{
+    "___className": "gameplataform.model.Config",
+
+    "allowedDomain" : "*",
+    "serverTest"    : "localhost",
+    "loadLink"      : "",
+    "saveLink"      : "",
+
+    "showStats"     : false,
+
+    "preLoaderPath" : "data/assets/preloader.swf",
+    "assets"        : ["data/assets.xml"]
+}
