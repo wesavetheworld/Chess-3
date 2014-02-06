@@ -16,6 +16,9 @@ public class Frame {
     public static const DISABLED:String = "disabled";
 
 
+    public static const WHITE:String = "white";
+    public static const BLACK:String = "black";
+
 
 }
 }

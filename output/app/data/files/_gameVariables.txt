@@ -3,5 +3,19 @@
 
     "volumeMain"      : 1,
     "volumeSFX"       : 1,
-    "volumeBackground": 1    
+    "volumeBackground": 1,
+
+    "defaultConfiguration": {
+        "___className": "gameplataform.model.BoardConfiguration",
+        "pieces": [
+            [-4,-2,-3,-5,-6,-3,-2,-4],
+            [-1,-1,-1,-1,-1,-1,-1,-1],
+            [ 0, 0, 0, 0, 0, 0, 0, 0],
+            [ 0, 0, 0, 0, 0, 0, 0, 0],
+            [ 0, 0, 0, 0, 0, 0, 0, 0],
+            [ 0, 0, 0, 0, 0, 0, 0, 0],
+            [ 1, 1, 1, 1, 1, 1, 1, 1],
+            [ 4, 2, 3, 5, 6, 3, 2, 4]
+        ]
+    }
 }

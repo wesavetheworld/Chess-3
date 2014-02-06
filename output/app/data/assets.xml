@@ -9,6 +9,7 @@
         <DataLoader url="data/files/_styles.css"            name="_styles"          type="CSS" />
 
         <!--<SWFLoader  url="data/assets/IsometricAssets.swf"   name="IsometricAssets" autoPlay="false"/>-->
+        <SWFLoader  url="data/assets/pieces.swf"   name="pieces" autoPlay="false"/>
 
         <MP3Loader url="data/sounds/click.mp3"      name="click"    autoPlay="false" />
         <MP3Loader url="data/sounds/over.mp3"       name="over"     autoPlay="false" />

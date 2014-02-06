@@ -6,9 +6,9 @@
  * To change this template use File | Settings | File Templates.
  */
 package gameplataform.controller {
-import flash.display.Shape;
 import flash.display.Sprite;
 import flash.events.Event;
+import flash.events.KeyboardEvent;
 import flash.utils.getTimer;
 
 import gameplataform.constants.GameStates;
@@ -17,6 +17,7 @@ import gameplataform.controller.layer.MapController;
 import gameplataform.controller.layer.PopupController;
 import gameplataform.controller.state.StateGame;
 import gameplataform.controller.state.StateMainMenu;
+import gameplataform.view.Console;
 
 import utils.events.StateMachineEvent;
 import utils.managers.sounds.SoundManager;
@@ -40,13 +41,15 @@ public final class Game {
      */
     private var stateMachine:StateMachine;
 
+    private var console:Console;
+
     public function Game(mapLayer:Sprite, hudLayer:Sprite, popupLayer:Sprite) {
         mapController   = new MapController     (mapLayer);
         hudController   = new HudController     (hudLayer);
         popupController = new PopupController   (popupLayer);
         stateMachine    = new StateMachine();
+        console = new Console();
     }
-
 
     public function initialize():void {
         SoundManager.volume = GameData.variables.volumeMain;
@@ -56,6 +59,7 @@ public final class Game {
         _lastTimeStamp = getTimer() / 1000.0;
 
         GameData.stage.addEventListener(Event.ENTER_FRAME, onEnterFrame);
+        GameData.stage.addEventListener(KeyboardEvent.KEY_DOWN, onKeyDown);
     }
 
     private function initializeStates():void {
@@ -84,6 +88,27 @@ public final class Game {
         _lastTimeStamp = t;
         GameMechanics.checkJobList();
         GameMechanics.checkClock(dt);
+    }
+
+    //==================================
+    //  Console
+    //==================================
+    private function onKeyDown(e:KeyboardEvent):void {
+        if(e.keyCode == 192) {
+            GameData.stage.addEventListener(KeyboardEvent.KEY_UP, onKeyUp);
+        }
+    }
+
+    private function onKeyUp(e:KeyboardEvent):void {
+        GameData.stage.removeEventListener(KeyboardEvent.KEY_UP, onKeyUp);
+        if(e.keyCode == 192) {
+            if(console.isHidden) {
+                GameData.stage.addChild(console);
+                console.show();
+            } else {
+                console.hide(GameData.stage.removeChild, console);
+            }
+        }
     }
 }
 }

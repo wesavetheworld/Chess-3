@@ -16,5 +16,8 @@ public class Variables {
     public var volumeSFX        :Number = 1.0;
     public var volumeBackground :Number = 1.0;
 
+
+    public var defaultConfiguration:BoardConfiguration;
+
 }
 }

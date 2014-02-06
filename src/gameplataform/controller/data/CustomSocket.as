@@ -8,16 +8,17 @@ import flash.events.IOErrorEvent;
 import flash.events.ProgressEvent;
 import flash.events.SecurityErrorEvent;
 import flash.net.Socket;
-import flash.system.Security;
+
+import gameplataform.view.Console;
+
+import utils.managers.serializer.SerializerManager;
 
 public class CustomSocket extends Socket {
 
     private var response:String = "";
-    private var log:String = "";
 
     public function CustomSocket(host:String = null, port:uint = 0) {
         super();
-        Security.allowDomain("*");
         configureListeners();
         if(host && port) {
             super.connect(host, port);
@@ -41,9 +42,8 @@ public class CustomSocket extends Socket {
         }
     }
 
-    public function sendData(str:String):void {
-        trace("sending : \"" + str + "\"");
-        write(str);
+    public function send(data:Object):void {
+        write(SerializerManager.JSONstringfy(data));
         flush();
     }
 
@@ -69,15 +69,11 @@ public class CustomSocket extends Socket {
 
     private function socketDataHandler(e:ProgressEvent):void {
         response = readResponse();
-        addReport("<Data>\n\t<message>" + readResponse() + "</message>\n\t<event>"+e+"</event>\n</Data>");
+        addReport("<Data>\n\t<message>" + response + "</message>\n\t<event>"+e+"</event>\n</Data>");
     }
 
     private function addReport(report:String):void {
-        log += report + "\n";
-    }
-
-    public function getReport():String {
-        return log;
+        Console.add(report);
     }
 
 }

@@ -2,28 +2,21 @@
  * Created by William on 2/5/14.
  */
 package gameplataform.view.board {
-import flash.display.Graphics;
 import flash.display.MovieClip;
 
+import gameplataform.constants.Frame;
 import gameplataform.view.piece.BasePiece;
 
 public class BoardCell extends MovieClip {
 
-    public static const SIZE:Number = 50;
+    public static const SIZE:Number = 60;
 
     private var _target:BasePiece;
 
-    public function BoardCell() {
-
+    public function BoardCell(isWhite:Boolean) {
+        super();
+        super.gotoAndStop(isWhite? Frame.WHITE: Frame.BLACK);
     }
-
-    public function render(color:uint):void {
-        var g:Graphics = this.graphics;
-        g.beginFill(color);
-        g.drawRect(0, 0, SIZE, SIZE);
-        g.endFill();
-    }
-
 
     public function get target():BasePiece {
         return _target;

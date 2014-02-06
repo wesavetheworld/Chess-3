@@ -70,12 +70,10 @@
       <file leaf-file-name="StateGame.as" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gameplataform/controller/state/StateGame.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="23" selection-start="530" selection-end="530" vertical-scroll-proportion="0.0" vertical-offset="130" max-vertical-offset="1207">
+            <state line="29" column="66" selection-start="823" selection-end="823" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="1615">
               <folding>
                 <element signature="e#82#112#0" expanded="true" />
-                <element signature="n#!!block;n#socketing#0;n#StateGame#0;n#state#0" expanded="false" />
-                <element signature="n#!!block;n#createButton#0;n#StateGame#0;n#state#0" expanded="false" />
-                <element signature="n#!!block;n#onClickBtn1#0;n#StateGame#0;n#state#0" expanded="false" />
+                <element signature="n#!!block;n#setup#0;n#StateGame#0;n#state#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -84,7 +82,19 @@
       <file leaf-file-name="Board.as" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/gameplataform/view/board/Board.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="67" selection-start="979" selection-end="979" vertical-scroll-proportion="0.53621495" vertical-offset="153" max-vertical-offset="1598">
+            <state line="86" column="100" selection-start="2888" selection-end="2888" vertical-scroll-proportion="1.1191589" vertical-offset="470" max-vertical-offset="1768">
+              <folding>
+                <element signature="e#76#106#0" expanded="true" />
+                <element signature="n#!!block;n#createNewBoard#0;n#Board#0;n#board#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BoardCell.as" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gameplataform/view/board/BoardCell.as">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="72" selection-start="447" selection-end="447" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
               <folding>
                 <element signature="e#76#107#0" expanded="true" />
               </folding>
@@ -92,20 +102,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BoardConfiguration.as" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gameplataform/model/BoardConfiguration.as">
+      <file leaf-file-name="Frame.as" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gameplataform/constants/Frame.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="54" selection-start="155" selection-end="155" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PieceTypes.as" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gameplataform/constants/PieceTypes.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="70" selection-start="390" selection-end="390" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
-              <folding />
+            <state line="19" column="47" selection-start="551" selection-end="551" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -124,16 +127,28 @@
         <option value="$PROJECT_DIR$/src/gameplataform/constants/GameStates.as" />
         <option value="$PROJECT_DIR$/src/gameplataform/controller/state/StateMainMenu.as" />
         <option value="$PROJECT_DIR$/src/gameplataform/controller/layer/LayerControllerBase.as" />
-        <option value="$PROJECT_DIR$/src/gameplataform/controller/Game.as" />
-        <option value="$PROJECT_DIR$/src/gameplataform/view/board/BoardCell.as" />
-        <option value="$PROJECT_DIR$/src/gameplataform/view/piece/BasePiece.as" />
         <option value="$PROJECT_DIR$/src/gameplataform/constants/PieceTypes.as" />
-        <option value="$PROJECT_DIR$/src/gameplataform/view/piece/Pawn.as" />
-        <option value="$PROJECT_DIR$/src/gameplataform/controller/data/CustomSocket.as" />
-        <option value="$PROJECT_DIR$/src/gameplataform/controller/state/StateGame.as" />
         <option value="$PROJECT_DIR$/src/gameplataform/model/BoardConfiguration.as" />
-        <option value="$PROJECT_DIR$/src/gameplataform/view/board/Board.as" />
         <option value="$PROJECT_DIR$/src/gameplataform/view/piece/Rook.as" />
+        <option value="$PROJECT_DIR$/src/gameplataform/view/piece/Knight.as" />
+        <option value="$PROJECT_DIR$/src/gameplataform/view/piece/King.as" />
+        <option value="$PROJECT_DIR$/src/gameplataform/view/piece/Queen.as" />
+        <option value="$PROJECT_DIR$/src/gameplataform/view/piece/Bishop.as" />
+        <option value="$PROJECT_DIR$/src/gameplataform/controller/Game.as" />
+        <option value="$PROJECT_DIR$/src/gameplataform/view/piece/Pawn.as" />
+        <option value="$PROJECT_DIR$/src/gameplataform/constants/SocketDataTypes.as" />
+        <option value="$PROJECT_DIR$/src/gameplataform/controller/data/CustomXMLSocke.as" />
+        <option value="$PROJECT_DIR$/src/gameplataform/controller/data/CustomXMLSocket.as" />
+        <option value="$PROJECT_DIR$/src/gameplataform/view/Console.as" />
+        <option value="$PROJECT_DIR$/src/gameplataform/controller/data/CustomSocket.as" />
+        <option value="$PROJECT_DIR$/output/app/data/assets.xml" />
+        <option value="$PROJECT_DIR$/output/app/data/files/_gameVariables.txt" />
+        <option value="$PROJECT_DIR$/src/gameplataform/model/Variables.as" />
+        <option value="$PROJECT_DIR$/src/gameplataform/constants/Frame.as" />
+        <option value="$PROJECT_DIR$/src/gameplataform/view/board/BoardCell.as" />
+        <option value="$PROJECT_DIR$/src/gameplataform/controller/state/StateGame.as" />
+        <option value="$PROJECT_DIR$/src/gameplataform/view/piece/BasePiece.as" />
+        <option value="$PROJECT_DIR$/src/gameplataform/view/board/Board.as" />
       </list>
     </option>
   </component>
@@ -172,7 +187,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -301,6 +315,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Chess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Chess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gameplataform" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -353,7 +389,135 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="layer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Chess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Chess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gameplataform" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Chess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Chess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gameplataform" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="constants" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Chess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Chess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="output" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Chess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Chess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="output" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Chess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Chess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="output" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Chess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Chess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="output" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="files" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -374,6 +538,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -395,19 +560,20 @@
     <property name="options.searchVisible" value="true" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="LayoutCode.rearrangeEntriesECMA Script Level 4" value="false" />
+    <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateActionScriptClassDialog.DESTINATION_PACKAGE_RECENT_KEY">
+      <recent name="gameplataform.controller.data" />
+      <recent name="gameplataform.constants" />
+      <recent name="gameplataform.view" />
+      <recent name="gameplataform.view.piece" />
+      <recent name="gameplataform.model" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Github\Chess\libs" />
       <recent name="C:\Github\Chess\src" />
       <recent name="C:\Github\Chess" />
-    </key>
-    <key name="CreateActionScriptClassDialog.DESTINATION_PACKAGE_RECENT_KEY">
-      <recent name="gameplataform.view.piece" />
-      <recent name="gameplataform.controller.data" />
-      <recent name="gameplataform.model" />
-      <recent name="gameplataform.constants" />
-      <recent name="gameplataform.view.board" />
     </key>
   </component>
   <component name="RunManager" selected="Flash App.Chess">
@@ -449,6 +615,19 @@
       <option name="trusted" value="true" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -477,19 +656,6 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -503,6 +669,9 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -524,9 +693,6 @@
       </option>
       <envs />
       <patterns />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
@@ -618,12 +784,13 @@
       <created>1391606741188</created>
       <updated>1391606741188</updated>
       <workItem from="1391606744575" duration="8067000" />
-      <workItem from="1391617202172" duration="6156000" />
+      <workItem from="1391617202172" duration="6701000" />
+      <workItem from="1391690429613" duration="17451000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14223000" />
+    <option name="totallyTimeSpent" value="32219000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -637,7 +804,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27375567" sideWeight="0.6077908" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.469457" sideWeight="0.6077908" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3280543" sideWeight="0.5" order="17" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2470651" sideWeight="0.3219697" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -686,10 +853,46 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/gameplataform/controller/state/StateGame.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="23" selection-start="530" selection-end="530" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1785">
+          <folding>
+            <element signature="e#82#112#0" expanded="true" />
+            <element signature="n#!!block;n#setup#0;n#StateGame#0;n#state#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gameplataform/view/board/Board.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="128" selection-start="562" selection-end="562" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="1598">
+          <folding>
+            <element signature="e#76#106#0" expanded="true" />
+            <element signature="n#!!block;n#createNewBoard#0;n#Board#0;n#board#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gameplataform/model/BoardConfiguration.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="54" selection-start="155" selection-end="155" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="306">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gameplataform/constants/PieceTypes.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="70" selection-start="390" selection-end="390" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="493">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/gameplataform/controller/Game.as">
       <provider selected="true" editor-type-id="text-editor">
         <state line="43" column="86" selection-start="1279" selection-end="1279" vertical-scroll-proportion="0.0" vertical-offset="538" max-vertical-offset="1615">
-          <folding />
+          <folding>
+            <element signature="e#191#219#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -698,9 +901,7 @@
         <state line="22" column="83" selection-start="570" selection-end="570" vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="1020">
           <folding>
             <element signature="e#82#112#0" expanded="true" />
-            <element signature="n#!!block;n#socketing#0;n#StateGame#0;n#state#0" expanded="false" />
-            <element signature="n#!!block;n#createButton#0;n#StateGame#0;n#state#0" expanded="false" />
-            <element signature="n#!!block;n#onClickBtn1#0;n#StateGame#0;n#state#0" expanded="false" />
+            <element signature="n#!!block;n#setup#0;n#StateGame#0;n#state#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -708,14 +909,19 @@
     <entry file="file://$PROJECT_DIR$/src/gameplataform/view/board/Board.as">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="80" selection-start="279" selection-end="279" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1088">
-          <folding />
+          <folding>
+            <element signature="e#76#106#0" expanded="true" />
+            <element signature="n#!!block;n#createNewBoard#0;n#Board#0;n#board#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gameplataform/view/board/BoardCell.as">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="29" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="714">
-          <folding />
+          <folding>
+            <element signature="e#76#107#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -763,11 +969,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gameplataform/controller/state/StateMainMenu.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="40" selection-start="406" selection-end="415" vertical-scroll-proportion="0.25817758" vertical-offset="0" max-vertical-offset="856">
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
+        <state line="14" column="40" selection-start="406" selection-end="415" vertical-scroll-proportion="0.25817758" vertical-offset="0" max-vertical-offset="856" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gameplataform/constants/GameStates.as">
@@ -784,55 +986,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gameplataform/view/board/BoardCell.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="29" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gameplataform/view/piece/BasePiece.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="63" selection-start="382" selection-end="382" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gameplataform/controller/Game.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="82" selection-start="1556" selection-end="1556" vertical-scroll-proportion="0.3843458" vertical-offset="198" max-vertical-offset="1275">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gameplataform/controller/data/CustomSocket.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="5" selection-start="1335" selection-end="1335" vertical-scroll-proportion="0.2651869" vertical-offset="538" max-vertical-offset="1496">
-          <folding>
-            <element signature="e#81#109#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gameplataform/controller/state/StateGame.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="23" selection-start="530" selection-end="530" vertical-scroll-proportion="0.0" vertical-offset="130" max-vertical-offset="1207">
-          <folding>
-            <element signature="e#82#112#0" expanded="true" />
-            <element signature="n#!!block;n#socketing#0;n#StateGame#0;n#state#0" expanded="false" />
-            <element signature="n#!!block;n#createButton#0;n#StateGame#0;n#state#0" expanded="false" />
-            <element signature="n#!!block;n#onClickBtn1#0;n#StateGame#0;n#state#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gameplataform/view/piece/Pawn.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="17" selection-start="137" selection-end="279" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gameplataform/view/piece/Rook.as">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="62" selection-start="118" selection-end="118" vertical-scroll-proportion="0.039719626" vertical-offset="0" max-vertical-offset="856">
@@ -840,25 +993,193 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/gameplataform/view/piece/Knight.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="26" selection-start="191" selection-end="291" vertical-scroll-proportion="0.11888112" vertical-offset="0" max-vertical-offset="858">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gameplataform/view/piece/Queen.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="5" selection-start="289" selection-end="289" vertical-scroll-proportion="0.15850815" vertical-offset="0" max-vertical-offset="858">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gameplataform/controller/GameMechanics.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="72" selection-start="290" selection-end="290" vertical-scroll-proportion="0.21845794" vertical-offset="0" max-vertical-offset="1003">
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gameplataform/controller/Game.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="58" selection-start="2804" selection-end="2804" vertical-scroll-proportion="0.6553738" vertical-offset="510" max-vertical-offset="1683">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../game_skeleton/UtilsDisplay/src/utilsDisplay/managers/buttons/ButtonManager.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="192" column="83" selection-start="8285" selection-end="8285" vertical-scroll-proportion="0.42990655" vertical-offset="2692" max-vertical-offset="5015">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gameplataform/view/Console.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="42" selection-start="205" selection-end="205" vertical-scroll-proportion="0.13901868" vertical-offset="0" max-vertical-offset="1581">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/output/app/data/files/_gameModels.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="856">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gameplataform/constants/AssetType.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="58" selection-start="386" selection-end="386" vertical-scroll-proportion="0.25817758" vertical-offset="0" max-vertical-offset="856">
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gameplataform/constants/SocketDataTypes.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="44" selection-start="313" selection-end="313" vertical-scroll-proportion="0.21845794" vertical-offset="0" max-vertical-offset="856">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gameplataform/controller/data/CustomSocket.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="83" selection-start="1191" selection-end="1191" vertical-scroll-proportion="0.0" vertical-offset="368" max-vertical-offset="1428">
+          <folding>
+            <element signature="e#81#109#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gameplataform/view/piece/King.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="11" selection-start="213" selection-end="213" vertical-scroll-proportion="0.11915888" vertical-offset="0" max-vertical-offset="856">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/output/app/data/assets.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="111" selection-start="1357" selection-end="1357" vertical-scroll-proportion="0.33761683" vertical-offset="0" max-vertical-offset="856">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/output/app/data/files/_gameVariables.txt">
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="37" selection-start="564" selection-end="564" vertical-scroll-proportion="0.3486128" vertical-offset="0" max-vertical-offset="829">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../game_skeleton/Utils/src/utils/managers/serializer/SerializerManager.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="282" column="69" selection-start="11311" selection-end="11311" vertical-scroll-proportion="0.18574767" vertical-offset="4380" max-vertical-offset="5236">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gameplataform/model/Variables.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="87" selection-start="154" selection-end="154" vertical-scroll-proportion="0.11915888" vertical-offset="0" max-vertical-offset="856">
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/gameplataform/constants/PieceTypes.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="70" selection-start="390" selection-end="390" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
+        <state line="18" column="58" selection-start="636" selection-end="636" vertical-scroll-proportion="0.317757" vertical-offset="0" max-vertical-offset="856">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gameplataform/model/BoardConfiguration.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="54" selection-start="155" selection-end="155" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
+        <state line="3" column="8" selection-start="49" selection-end="68" vertical-scroll-proportion="0.019859813" vertical-offset="0" max-vertical-offset="856">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gameplataform/constants/Frame.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="47" selection-start="551" selection-end="551" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gameplataform/view/board/BoardCell.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="72" selection-start="447" selection-end="447" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
+          <folding>
+            <element signature="e#76#107#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gameplataform/controller/state/StateGame.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="66" selection-start="823" selection-end="823" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="1615">
+          <folding>
+            <element signature="e#82#112#0" expanded="true" />
+            <element signature="n#!!block;n#setup#0;n#StateGame#0;n#state#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gameplataform/view/piece/BasePiece.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="63" selection-start="417" selection-end="417" vertical-scroll-proportion="0.27803737" vertical-offset="0" max-vertical-offset="856">
+          <folding>
+            <element signature="e#76#107#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gameplataform/view/piece/Bishop.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="8" selection-start="329" selection-end="329" vertical-scroll-proportion="0.25817758" vertical-offset="0" max-vertical-offset="856">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gameplataform/view/piece/Pawn.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="30" selection-start="150" selection-end="150" vertical-scroll-proportion="0.07943925" vertical-offset="0" max-vertical-offset="856">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gameplataform/view/board/Board.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="67" selection-start="979" selection-end="979" vertical-scroll-proportion="0.53621495" vertical-offset="153" max-vertical-offset="1598">
+        <state line="86" column="100" selection-start="2888" selection-end="2888" vertical-scroll-proportion="1.1191589" vertical-offset="470" max-vertical-offset="1768">
           <folding>
-            <element signature="e#76#107#0" expanded="true" />
+            <element signature="e#76#106#0" expanded="true" />
+            <element signature="n#!!block;n#createNewBoard#0;n#Board#0;n#board#0" expanded="false" />
           </folding>
         </state>
       </provider>
