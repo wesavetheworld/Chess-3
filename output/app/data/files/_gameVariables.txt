@@ -17,5 +17,49 @@
             [ 1, 1, 1, 1, 1, 1, 1, 1],
             [ 4, 2, 3, 5, 6, 3, 2, 4]
         ]
+    },
+
+    "defaultPawn"   : {
+        "___className": "gameplataform.model.MovementModel",
+        "movements": [
+            { "___className":"flash.geom.Point", "x": 0, "y": 1 }
+        ]
+    },
+    "defaultKnight" : {
+        "___className": "gameplataform.model.MovementModel",
+        "movements": [
+            { "___className":"flash.geom.Point", "x":  1, "y":  3 },
+            { "___className":"flash.geom.Point", "x": -1, "y":  3 },
+            { "___className":"flash.geom.Point", "x":  1, "y": -3 },
+            { "___className":"flash.geom.Point", "x": -1, "y": -3 },
+            { "___className":"flash.geom.Point", "x":  3, "y":  1 },
+            { "___className":"flash.geom.Point", "x":  3, "y": -1 },
+            { "___className":"flash.geom.Point", "x": -3, "y":  1 },
+            { "___className":"flash.geom.Point", "x": -3, "y": -1 },
+        ]
+    },
+    "defaultRook"   : {
+        "___className": "gameplataform.model.MovementModel",
+        "movements": [
+            { "___className":"flash.geom.Point", "x": 0, "y": 0 }
+        ]
+    },
+    "defaultBishop" : {
+        "___className": "gameplataform.model.MovementModel",
+        "movements": [
+            { "___className":"flash.geom.Point", "x": 0, "y": 0 }
+        ]
+    },
+    "defaultQueen"  : {
+        "___className": "gameplataform.model.MovementModel",
+        "movements": [
+            { "___className":"flash.geom.Point", "x": 0, "y": 0 }
+        ]
+    },
+    "defaultKing"   : {
+        "___className": "gameplataform.model.MovementModel",
+        "movements": [
+            { "___className":"flash.geom.Point", "x": 0, "y": 0 }
+        ]
     }
 }

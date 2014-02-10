@@ -63,6 +63,17 @@ public class Board extends MovieClip {
         return true;
     }
 
+    public function calculatePossiblePositions(piece:BasePiece):Vector.<BoardCell> {
+        var positions:Vector.<BoardCell> = new Vector.<BoardCell>();
+        switch(piece.type) {
+            case PieceTypes.WHITE_PAWN: {
+
+            }
+        }
+
+        return positions;
+    }
+
     //==================================
     //
     //==================================

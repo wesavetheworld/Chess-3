@@ -19,5 +19,11 @@ public class Variables {
 
     public var defaultConfiguration:BoardConfiguration;
 
+    public var defaultPawn   :MovementModel;
+    public var defaultKnight :MovementModel;
+    public var defaultRook   :MovementModel;
+    public var defaultBishop :MovementModel;
+    public var defaultQueen  :MovementModel;
+    public var defaultKing   :MovementModel;
 }
 }

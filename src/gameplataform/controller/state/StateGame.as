@@ -4,6 +4,7 @@
 package gameplataform.controller.state {
 import flash.display.Graphics;
 import flash.display.Sprite;
+import flash.geom.Point;
 import flash.text.TextField;
 import flash.text.TextFieldType;
 
@@ -12,6 +13,8 @@ import gameplataform.controller.Game;
 import gameplataform.controller.GameData;
 import gameplataform.controller.data.CustomSocket;
 import gameplataform.view.board.Board;
+
+import utils.managers.serializer.SerializerManager;
 
 import utils.toollib.ToolColor;
 
@@ -26,6 +29,7 @@ public class StateGame extends BaseState {
     }
 
     private function onEnter():void {
+        trace(SerializerManager.encodeAndStringfy(new Point(0,0)));
         board = new Board();
         board.resetBoard(GameData.variables.defaultConfiguration);
         board.x = GameData.stageWidth - board.width >> 1;

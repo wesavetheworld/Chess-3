@@ -6,11 +6,14 @@ import flash.display.MovieClip;
 import flash.geom.Point;
 
 import gameplataform.constants.Frame;
+import gameplataform.model.MovementModel;
 
 public class BasePiece extends MovieClip {
 
     private var _type:int;
     private var _position:Point = new Point(0,0);
+
+    private var _model:MovementModel;
 
     public function BasePiece(type:int) {
         super();
@@ -39,5 +42,6 @@ public class BasePiece extends MovieClip {
     public function get type():int {
         return _type;
     }
+
 }
 }
