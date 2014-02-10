@@ -15,10 +15,11 @@ public class Frame {
     public static const ENABLED:String = "enabled";
     public static const DISABLED:String = "disabled";
 
-
     public static const WHITE:String = "white";
     public static const BLACK:String = "black";
 
+    public static const SELECTED:String = "selected";
+    public static const HIGHLIGHT:String = "highlight";
 
 }
 }

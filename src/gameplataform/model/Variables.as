@@ -16,10 +16,10 @@ public class Variables {
     public var volumeSFX        :Number = 1.0;
     public var volumeBackground :Number = 1.0;
 
-
     public var defaultConfiguration:BoardConfiguration;
 
-    public var defaultPawn   :MovementModel;
+    public var defaultPawn_white:MovementModel;
+    public var defaultPawn_black:MovementModel;
     public var defaultKnight :MovementModel;
     public var defaultRook   :MovementModel;
     public var defaultBishop :MovementModel;

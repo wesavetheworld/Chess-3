@@ -8,58 +8,108 @@
     "defaultConfiguration": {
         "___className": "gameplataform.model.BoardConfiguration",
         "pieces": [
-            [-4,-2,-3,-5,-6,-3,-2,-4],
-            [-1,-1,-1,-1,-1,-1,-1,-1],
-            [ 0, 0, 0, 0, 0, 0, 0, 0],
-            [ 0, 0, 0, 0, 0, 0, 0, 0],
-            [ 0, 0, 0, 0, 0, 0, 0, 0],
-            [ 0, 0, 0, 0, 0, 0, 0, 0],
-            [ 1, 1, 1, 1, 1, 1, 1, 1],
-            [ 4, 2, 3, 5, 6, 3, 2, 4]
+            [ 4, 1, 0, 0, 0, 0,-1,-4],
+            [ 2, 1, 0, 0, 0, 0,-1,-2],
+            [ 3, 1, 0, 0, 0, 0,-1,-3],
+            [ 5, 1, 0, 0, 0, 0,-1,-5],
+            [ 6, 1, 0, 0, 0, 0,-1,-6],
+            [ 3, 1, 0, 0, 0, 0,-1,-3],
+            [ 2, 1, 0, 0, 0, 0,-1,-2],
+            [ 4, 1, 0, 0, 0, 0,-1,-4]
         ]
     },
 
-    "defaultPawn"   : {
-        "___className": "gameplataform.model.MovementModel",
-        "movements": [
-            { "___className":"flash.geom.Point", "x": 0, "y": 1 }
+    "defaultPawn_white"   : {
+        "___className"    : "gameplataform.model.MovementModel",
+        "type"            : "positional",
+        "hasAttackPattern": true,
+        "movements"       : [
+            { "___className":"flash.geom.Point", "x": 0, "y":  1 }
+        ],
+        "attack"          : [
+            { "___className":"flash.geom.Point", "x":  1, "y":  1 },
+            { "___className":"flash.geom.Point", "x": -1, "y":  1 }
+        ]
+    },
+    "defaultPawn_black"   : {
+        "___className"    : "gameplataform.model.MovementModel",
+        "type"            : "positional",
+        "hasAttackPattern": true,
+        "movements"       : [
+            { "___className":"flash.geom.Point", "x": 0, "y": -1 }
+        ],
+        "attack"          : [
+            { "___className":"flash.geom.Point", "x":  1, "y": -1 },
+            { "___className":"flash.geom.Point", "x": -1, "y": -1 }  
         ]
     },
     "defaultKnight" : {
-        "___className": "gameplataform.model.MovementModel",
-        "movements": [
-            { "___className":"flash.geom.Point", "x":  1, "y":  3 },
-            { "___className":"flash.geom.Point", "x": -1, "y":  3 },
-            { "___className":"flash.geom.Point", "x":  1, "y": -3 },
-            { "___className":"flash.geom.Point", "x": -1, "y": -3 },
-            { "___className":"flash.geom.Point", "x":  3, "y":  1 },
-            { "___className":"flash.geom.Point", "x":  3, "y": -1 },
-            { "___className":"flash.geom.Point", "x": -3, "y":  1 },
-            { "___className":"flash.geom.Point", "x": -3, "y": -1 },
+        "___className"    : "gameplataform.model.MovementModel",
+        "type"            : "positional",        
+        "hasAttackPattern": false,
+        "movements"       : [
+            { "___className":"flash.geom.Point", "x":  1, "y":  2 },
+            { "___className":"flash.geom.Point", "x": -1, "y":  2 },
+            { "___className":"flash.geom.Point", "x":  1, "y": -2 },
+            { "___className":"flash.geom.Point", "x": -1, "y": -2 },
+            { "___className":"flash.geom.Point", "x":  2, "y":  1 },
+            { "___className":"flash.geom.Point", "x":  2, "y": -1 },
+            { "___className":"flash.geom.Point", "x": -2, "y":  1 },
+            { "___className":"flash.geom.Point", "x": -2, "y": -1 }
         ]
     },
     "defaultRook"   : {
-        "___className": "gameplataform.model.MovementModel",
-        "movements": [
-            { "___className":"flash.geom.Point", "x": 0, "y": 0 }
+        "___className"    : "gameplataform.model.MovementModel",
+        "type"            : "directional",
+        "hasAttackPattern": false,
+        "movements"       : [
+            { "___className":"flash.geom.Point", "x":  1, "y":  0 },
+            { "___className":"flash.geom.Point", "x": -1, "y":  0 },
+            { "___className":"flash.geom.Point", "x":  0, "y":  1 },
+            { "___className":"flash.geom.Point", "x":  0, "y": -1 }
         ]
     },
     "defaultBishop" : {
-        "___className": "gameplataform.model.MovementModel",
-        "movements": [
-            { "___className":"flash.geom.Point", "x": 0, "y": 0 }
+        "___className"    : "gameplataform.model.MovementModel",
+        "type"            : "directional",
+        "hasAttackPattern": false,
+        "movements"       : [
+            { "___className":"flash.geom.Point", "x":  1, "y":  1 },
+            { "___className":"flash.geom.Point", "x": -1, "y":  1 },
+            { "___className":"flash.geom.Point", "x":  1, "y": -1 },
+            { "___className":"flash.geom.Point", "x": -1, "y": -1 }
         ]
     },
     "defaultQueen"  : {
-        "___className": "gameplataform.model.MovementModel",
-        "movements": [
-            { "___className":"flash.geom.Point", "x": 0, "y": 0 }
+        "___className"    : "gameplataform.model.MovementModel",
+        "type"            : "directional",
+        "hasAttackPattern": false,
+        "movements"       : [
+            { "___className":"flash.geom.Point", "x":  1, "y":  1 },
+            { "___className":"flash.geom.Point", "x": -1, "y":  1 },
+            { "___className":"flash.geom.Point", "x":  1, "y": -1 },
+            { "___className":"flash.geom.Point", "x": -1, "y": -1 },
+
+            { "___className":"flash.geom.Point", "x":  1, "y":  0 },
+            { "___className":"flash.geom.Point", "x": -1, "y":  0 },
+            { "___className":"flash.geom.Point", "x":  0, "y":  1 },
+            { "___className":"flash.geom.Point", "x":  0, "y": -1 }
         ]
     },
     "defaultKing"   : {
-        "___className": "gameplataform.model.MovementModel",
-        "movements": [
-            { "___className":"flash.geom.Point", "x": 0, "y": 0 }
+        "___className"    : "gameplataform.model.MovementModel",
+        "type"            : "positional",
+        "hasAttackPattern": false,
+        "movements"       : [
+            { "___className":"flash.geom.Point", "x":  1, "y":  1 },
+            { "___className":"flash.geom.Point", "x": -1, "y":  1 },
+            { "___className":"flash.geom.Point", "x":  1, "y": -1 },
+            { "___className":"flash.geom.Point", "x": -1, "y": -1 },
+
+            { "___className":"flash.geom.Point", "x":  1, "y":  0 },
+            { "___className":"flash.geom.Point", "x": -1, "y":  0 },
+            { "___className":"flash.geom.Point", "x":  0, "y":  1 },
+            { "___className":"flash.geom.Point", "x":  0, "y": -1 }
         ]
     }
 }
