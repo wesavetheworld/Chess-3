@@ -3,13 +3,13 @@
  */
 package gameplataform.view.piece {
 import gameplataform.constants.Alignment;
-import gameplataform.constants.PieceTypes;
+import gameplataform.constants.PieceType;
 import gameplataform.model.MovementModel;
 
 public class Bishop extends BasePiece {
 
     public function Bishop(data:MovementModel, alignment:String) {
-        super(alignment == Alignment.WHITE? PieceTypes.WHITE_BISHOP : PieceTypes.BLACK_BISHOP, data, alignment);
+        super(alignment == Alignment.WHITE? PieceType.WHITE_BISHOP : PieceType.BLACK_BISHOP, data, alignment);
     }
 }
 }

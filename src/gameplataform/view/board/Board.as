@@ -3,11 +3,13 @@
  */
 package gameplataform.view.board {
 import flash.display.MovieClip;
+import flash.display.Sprite;
+import flash.errors.IllegalOperationError;
 import flash.geom.Point;
 
 import gameplataform.constants.Alignment;
 import gameplataform.constants.MovementType;
-import gameplataform.constants.PieceTypes;
+import gameplataform.constants.PieceType;
 import gameplataform.controller.GameData;
 import gameplataform.model.BoardConfiguration;
 import gameplataform.model.Variables;
@@ -26,18 +28,27 @@ import utilsDisplay.managers.buttons.ButtonManager;
 
 public class Board extends MovieClip {
 
+    public static const MOVE_MADE:String = "move.made";
+
     public static const SIZE:uint = 8;
 
     private var _cells:Vector.<Vector.<BoardCell>>;
     private var _pieces:Vector.<BasePiece>;
 
-    public var dispatcher:MultipleSignal;
+    private var cellLayer:Sprite;
+    private var pieceLayer:Sprite;
 
     private var _selectedCell:BoardCell;
     private var _possibleMoves:Vector.<BoardCell>;
 
+    public var dispatcher:MultipleSignal;
+
     public function Board() {
-        createNewBoard(this, SIZE);
+        cellLayer = new Sprite();
+        pieceLayer = new Sprite();
+        super.addChild(cellLayer);
+        super.addChild(pieceLayer);
+        createNewBoard(SIZE);
         dispatcher = new MultipleSignal(this);
     }
 
@@ -45,24 +56,75 @@ public class Board extends MovieClip {
     //  Public
     //==================================
     public function resetBoard(configuration:BoardConfiguration):void {
-        var piece:BasePiece;
-
-        for each (piece in _pieces) {
-            super.removeChild(piece);
-        }
+        while(pieceLayer.numChildren > 0)
+            pieceLayer.removeChildAt(0);
 
         _pieces = new Vector.<BasePiece>();
 
         for (var i:int = 0; i < SIZE; i++) {
             for (var j:int = 0; j < SIZE; j++) {
-                ButtonManager.add(_cells[i][j], { useDefault:false, onClick:onClickCell});
-                if(configuration.pieces[i][j] != 0) {
-                    piece = getPieceByType(configuration.pieces[i][j]);
-                    movePieceTo(piece, i, j);
+                if(i < configuration.pieces.length && j < configuration.pieces[i].length && configuration.pieces[i][j] != 0) {
+                    var piece:BasePiece = getPieceByType(configuration.pieces[i][j]);
+                    var cell:BoardCell = _cells[i][j];
+                    cell.target = piece;
+                    piece.setPosition(i,j);
+                    piece.x = cell.x;
+                    piece.y = cell.y;
                     _pieces.push(piece);
-                    super.addChild(piece);
+                    pieceLayer.addChild(piece);
                     ButtonManager.add(piece, { useDefault:false, onClick:onClickPiece});
+                    ButtonManager.disable(piece);
                 }
+            }
+        }
+    }
+
+    public function movePieceTo(piece:BasePiece, x:uint, y:uint):void {
+        if(piece.positionX == x && piece.positionY == y)
+            throw new IllegalOperationError("Cannot move piece to same place: (" + x + "," + y + ").");
+
+        var cell:BoardCell;
+        var captured:int = 0;
+        var lastPositionX:uint = piece.positionX, lastPositionY:uint = piece.positionY;
+
+        //removing from current cell
+        cell = _cells[piece.positionX][piece.positionY];
+        cell.target = null;
+
+        //moving to new cell
+        cell = _cells[x][y];
+        if(cell.target != null) { //checking if it is capturing something
+            if(cell.target.alignment == piece.alignment)
+                throw new IllegalOperationError("Cannot capture piece of same alignment: \"" + piece.alignment + "\".");
+            captured = cell.target.type;
+            removePieceFrom(cell);
+        }
+        cell.target = piece;
+        piece.setPosition(x, y);
+        piece.x = cell.x;
+        piece.y = cell.y;
+
+        dispatcher.dispatch(MOVE_MADE, piece.type, lastPositionX, lastPositionY, x, y, captured);
+    }
+
+    public function enable():void {
+        for each (var piece:BasePiece in _pieces) {
+            ButtonManager.enable(piece);
+        }
+        for each (var vCell:Vector.<BoardCell> in _cells) {
+            for each (var cell:BoardCell in vCell) {
+                ButtonManager.enable(cell);
+            }
+        }
+    }
+
+    public function disable():void {
+        for each (var piece:BasePiece in _pieces) {
+            ButtonManager.disable(piece);
+        }
+        for each (var vCell:Vector.<BoardCell> in _cells) {
+            for each (var cell:BoardCell in vCell) {
+                ButtonManager.disable(cell);
             }
         }
     }
@@ -70,46 +132,43 @@ public class Board extends MovieClip {
     //==================================
     //  Private
     //==================================
-    private function getPieceByType(type:int):BasePiece {
-        var variables:Variables = GameData.variables;
-        switch(type) {
-            case PieceTypes.WHITE_PAWN    : return new Pawn(variables.defaultPawn_white, Alignment.WHITE); break;
-            case PieceTypes.BLACK_PAWN    : return new Pawn(variables.defaultPawn_black, Alignment.BLACK); break;
-            case PieceTypes.WHITE_KNIGHT  : return new Knight(variables.defaultKnight, Alignment.WHITE); break;
-            case PieceTypes.BLACK_KNIGHT  : return new Knight(variables.defaultKnight, Alignment.BLACK); break;
-            case PieceTypes.WHITE_BISHOP  : return new Bishop(variables.defaultBishop, Alignment.WHITE); break;
-            case PieceTypes.BLACK_BISHOP  : return new Bishop(variables.defaultBishop, Alignment.BLACK); break;
-            case PieceTypes.WHITE_ROOK    : return new Rook(variables.defaultRook, Alignment.WHITE); break;
-            case PieceTypes.BLACK_ROOK    : return new Rook(variables.defaultRook, Alignment.BLACK); break;
-            case PieceTypes.WHITE_QUEEN   : return new Queen(variables.defaultQueen, Alignment.WHITE); break;
-            case PieceTypes.BLACK_QUEEN   : return new Queen(variables.defaultQueen, Alignment.BLACK); break;
-            case PieceTypes.WHITE_KING    : return new King(variables.defaultKing, Alignment.WHITE); break;
-            case PieceTypes.BLACK_KING    : return new King(variables.defaultKing, Alignment.BLACK); break;
-            default: throw new ArgumentError("Invalid type received : \"" + type + "\".");
+    private function createNewBoard(size:uint):void {
+        _cells = new Vector.<Vector.<BoardCell>>();
+        _cells.length = size;
+        _cells.fixed = true;
+        for (var i:int = 0; i < size; i++) {
+            _cells[i] = new Vector.<BoardCell>();
+            _cells[i].length = size;
+            _cells[i].fixed = true;
+            for (var j:int = 0; j < size; j++) {
+                _cells[i][j] = new BoardCell(!((i % 2) == (j % 2)), i, j);
+                _cells[i][j].x = i * BoardCell.SIZE;
+                _cells[i][j].y = j * BoardCell.SIZE;
+                _cells[i][j].text = "(" + i + "," + j + ")";
+                cellLayer.addChild(_cells[i][j]);
+                ButtonManager.add(_cells[i][j], { useDefault:false, onClick:onClickCell});
+                ButtonManager.disable(_cells[i][j]);
+            }
         }
     }
 
-    private function movePieceTo(piece:BasePiece, x:uint, y:uint):void {
-        if(piece.positionX == x && piece.positionY == y)
-            return;
-
-        //removing from last cell
-        if(piece.positionX != -1 && piece.positionY != -1) {
-            var lastCell:BoardCell = _cells[piece.positionX][piece.positionY];
-            lastCell.target = null;
+    private function getPieceByType(type:int):BasePiece {
+        var variables:Variables = GameData.variables;
+        switch(type) {
+            case PieceType.WHITE_PAWN    : return new Pawn(variables.defaultPawn_white, Alignment.WHITE); break;
+            case PieceType.BLACK_PAWN    : return new Pawn(variables.defaultPawn_black, Alignment.BLACK); break;
+            case PieceType.WHITE_KNIGHT  : return new Knight(variables.defaultKnight, Alignment.WHITE); break;
+            case PieceType.BLACK_KNIGHT  : return new Knight(variables.defaultKnight, Alignment.BLACK); break;
+            case PieceType.WHITE_BISHOP  : return new Bishop(variables.defaultBishop, Alignment.WHITE); break;
+            case PieceType.BLACK_BISHOP  : return new Bishop(variables.defaultBishop, Alignment.BLACK); break;
+            case PieceType.WHITE_ROOK    : return new Rook(variables.defaultRook, Alignment.WHITE); break;
+            case PieceType.BLACK_ROOK    : return new Rook(variables.defaultRook, Alignment.BLACK); break;
+            case PieceType.WHITE_QUEEN   : return new Queen(variables.defaultQueen, Alignment.WHITE); break;
+            case PieceType.BLACK_QUEEN   : return new Queen(variables.defaultQueen, Alignment.BLACK); break;
+            case PieceType.WHITE_KING    : return new King(variables.defaultKing, Alignment.WHITE); break;
+            case PieceType.BLACK_KING    : return new King(variables.defaultKing, Alignment.BLACK); break;
+            default: throw new ArgumentError("Invalid type received : \"" + type + "\".");
         }
-
-        //moving to new cell
-        var cell:BoardCell = _cells[x][y];
-        if(cell.target != null) { //checking if new cell has already a target
-            var t:BasePiece = cell.target;
-            cell.target = null;
-            super.removeChild(t);
-        }
-        cell.target = piece;
-        piece.setPosition(x, y);
-        piece.x = cell.x;
-        piece.y = cell.y;
     }
 
     private function selectPiece(piece:BasePiece):void {
@@ -149,10 +208,19 @@ public class Board extends MovieClip {
         _possibleMoves = null;
     }
 
+    private function removePieceFrom(cell:BoardCell):void {
+        var piece:BasePiece = cell.target;
+        cell.target = null;
+        ButtonManager.remove(piece);
+        _pieces.splice(_pieces.indexOf(piece), 1);
+        pieceLayer.removeChild(piece);
+    }
+
     private function calculatePossibleMoves(piece:BasePiece):Vector.<BoardCell> {
         var mov:Vector.<BoardCell> = new Vector.<BoardCell>();
-        var p:Point, rx:uint, ry:uint;
+        var p:Point;
         var cell:BoardCell;
+        var rx:uint, ry:uint;
 
         var range:uint;
         switch(piece.model.type) {
@@ -229,25 +297,6 @@ public class Board extends MovieClip {
         selectPiece(piece);
     }
 
-    //==================================
-    //  Static
-    //==================================
-    private static function createNewBoard(instance:Board, size:uint):void {
-        instance._cells = new Vector.<Vector.<BoardCell>>();
-        instance._cells.length = size;
-        instance._cells.fixed = true;
-        for (var i:int = 0; i < size; i++) {
-            instance._cells[i] = new Vector.<BoardCell>();
-            instance._cells[i].length = size;
-            instance._cells[i].fixed = true;
-            for (var j:int = 0; j < size; j++) {
-                instance._cells[i][j] = new BoardCell(!((i % 2) == (j % 2)), i, j);
-                instance._cells[i][j].x = i * BoardCell.SIZE;
-                instance._cells[i][j].y = j * BoardCell.SIZE;
-                instance._cells[i][j].text = "(" + i + "," + j + ")";
-                instance.addChild(instance._cells[i][j]);
-            }
-        }
-    }
+
 }
 }

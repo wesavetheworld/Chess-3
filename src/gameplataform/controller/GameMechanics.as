@@ -2,6 +2,8 @@
  * Created by William on 1/15/14.
  */
 package gameplataform.controller {
+import gameplataform.controller.data.ChessSocket;
+
 import utils.base.FunctionObject;
 import utils.managers.Pool;
 
@@ -50,5 +52,9 @@ public final class GameMechanics {
         }
     }
 
+    //==================================
+    //  Socket
+    //==================================
+    public static var socket:ChessSocket = new ChessSocket("localhost", 9001);
 }
 }

@@ -8,6 +8,8 @@
 package gameplataform.constants {
 public class GameStates {
 
+    public static const TEST:String = "state.test";
+
     public static const MAIN_MENU:String = "state.main.menu";
     public static const GAME:String = "state.game";
 

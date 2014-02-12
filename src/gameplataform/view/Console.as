@@ -78,7 +78,7 @@ public class Console extends Sprite {
     //==================================
     //
     //==================================
-    public static function add(s:String):void {
+    public static function log(s:String):void {
         if(_instance != null) {
             _reports.push(s);
             _instance.txtReports.appendText("\n" + s);

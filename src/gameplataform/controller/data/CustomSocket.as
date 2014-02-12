@@ -73,7 +73,7 @@ public class CustomSocket extends Socket {
     }
 
     private function addReport(report:String):void {
-        Console.add(report);
+        Console.log(report);
     }
 
 }

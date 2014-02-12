@@ -17,6 +17,7 @@ import gameplataform.controller.layer.MapController;
 import gameplataform.controller.layer.PopupController;
 import gameplataform.controller.state.StateGame;
 import gameplataform.controller.state.StateMainMenu;
+import gameplataform.controller.state.StateTest;
 import gameplataform.view.Console;
 
 import utils.events.StateMachineEvent;
@@ -66,10 +67,11 @@ public final class Game {
         stateMachine.addEventListener(StateMachineEvent.TRANSITION_COMPLETE, onTransitionComplete);
         stateMachine.addEventListener(StateMachineEvent.TRANSITION_DENIED, onTransitionDenied);
 
+        stateMachine.add(new StateTest(this));
         stateMachine.add(new StateMainMenu(this));
         stateMachine.add(new StateGame(this));
 
-        stateMachine.changeTo(GameStates.GAME);
+        stateMachine.changeTo(GameStates.MAIN_MENU);
     }
 
     //==================================
