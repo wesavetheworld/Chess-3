@@ -1,7 +1,7 @@
 /**
- * Created by William on 2/11/14.
+ * Created by William on 2/13/14.
  */
-package gameplataform.view.menu {
+package gameplataform.view.popup {
 import flash.display.MovieClip;
 import flash.text.TextField;
 
@@ -11,31 +11,30 @@ import utils.managers.event.MultipleSignal;
 
 import utilsDisplay.managers.buttons.ButtonManager;
 
-public class MainMenu extends MovieClip {
+public class SignUp extends MovieClip {
 
-    public var txtUser      :TextField;
-    public var txtPassword  :TextField;
-    public var txtError     :TextField;
+    public var txtUser:TextField;
+    public var txtPassword:TextField;
+    public var txtError:TextField;
 
-    public var btnLogin:MovieClip;
-    public var btnSignup:MovieClip;
+    public var btnSignUp:MovieClip;
+    public var btnBack:MovieClip;
 
     public var dispatcher:MultipleSignal;
 
     private var _buttons:Vector.<MovieClip>;
 
-    public function MainMenu() {
+    public function SignUp() {
         super();
-
-        txtError.text = "";
 
         dispatcher = new MultipleSignal(this);
 
-        _buttons = new <MovieClip>[btnLogin, btnSignup];
-        ButtonManager.add(btnLogin, {onClick:onClickOnline}); ButtonManager.disable(btnLogin);
-        ButtonManager.add(btnSignup, {onClick:onClickSignup}); ButtonManager.disable(btnSignup);
+        _buttons = new <MovieClip>[btnSignUp, btnBack];
 
-        enable();
+        ButtonManager.add(btnSignUp, {onClick:onClickSignup});
+        ButtonManager.add(btnBack, {onClick:onClickBack});
+
+        txtError.text = "";
     }
 
     public function enable():void {
@@ -65,24 +64,19 @@ public class MainMenu extends MovieClip {
     //==================================
     //
     //==================================
-    private function canProceedWithLogin():Boolean {
+    private function canProceed():Boolean {
         var user:String = txtUser.text, pw:String = txtPassword.text;
         return (user != "" && pw != "");
     }
 
-    private function onClickOnline(btn:MovieClip):void {
-        if(canProceedWithLogin()) {
-            dispatcher.dispatch(GameSignals.LOGIN, txtUser.text, txtPassword.text);
-        } else {
-            txtError.text = "Preencher os campos de usuário e senha";
+    private function onClickSignup(btn:MovieClip):void {
+        if(canProceed()) {
+            dispatcher.dispatch(GameSignals.SIGNUP, txtUser.text, txtPassword.text);
         }
     }
 
-    private function onClickSignup(btn:MovieClip):void {
-        dispatcher.dispatch(GameSignals.SIGNUP);
+    private function onClickBack(btn:MovieClip):void {
+        dispatcher.dispatch(GameSignals.BACK);
     }
-
-
-
 }
 }

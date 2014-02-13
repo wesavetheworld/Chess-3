@@ -11,11 +11,12 @@ import flash.events.Event;
 import flash.events.KeyboardEvent;
 import flash.utils.getTimer;
 
-import gameplataform.constants.GameStates;
+import gameplataform.constants.GameState;
 import gameplataform.controller.layer.HudController;
 import gameplataform.controller.layer.MapController;
 import gameplataform.controller.layer.PopupController;
 import gameplataform.controller.state.StateGame;
+import gameplataform.controller.state.StateLobby;
 import gameplataform.controller.state.StateMainMenu;
 import gameplataform.controller.state.StateTest;
 import gameplataform.view.Console;
@@ -70,8 +71,9 @@ public final class Game {
         stateMachine.add(new StateTest(this));
         stateMachine.add(new StateMainMenu(this));
         stateMachine.add(new StateGame(this));
+        stateMachine.add(new StateLobby(this));
 
-        stateMachine.changeTo(GameStates.MAIN_MENU);
+        stateMachine.changeTo(GameState.MAIN_MENU);
     }
 
     //==================================

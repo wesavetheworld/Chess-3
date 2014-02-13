@@ -9,6 +9,8 @@ import flash.events.ProgressEvent;
 import flash.events.SecurityErrorEvent;
 import flash.net.Socket;
 
+import gameplataform.constants.SocketType;
+
 import gameplataform.view.Console;
 
 import utils.managers.event.MultipleSignal;
@@ -16,10 +18,6 @@ import utils.managers.event.MultipleSignal;
 import utils.managers.serializer.SerializerManager;
 
 public class ChessSocket {
-
-    public static const CONNECTED:String = "connected";
-
-    public static const READ:String = "read";
 
     public var host:String = "";
     public var port:uint = 0;
@@ -49,7 +47,7 @@ public class ChessSocket {
     }
 
     public function disconnect():void {
-
+        _socket.close();
     }
 
     public function send(data:Object):void {
@@ -81,7 +79,7 @@ public class ChessSocket {
 
     private function onConnect(e:Event):void {
         addReport("<Connection>\n\t<event>" + e + "</event>\n</Connection>");
-        dispatcher.dispatch(CONNECTED);
+        dispatcher.dispatch(SocketType.CONNECTED);
     }
 
     private function onIOError(e:IOErrorEvent):void {
@@ -95,7 +93,7 @@ public class ChessSocket {
     private function onData(e:ProgressEvent):void {
         _lastDataReceived = _socket.readUTFBytes(_socket.bytesAvailable);
         addReport("<Data>\n\t<message>" + _lastDataReceived + "</message>\n\t<event>"+e+"</event>\n</Data>");
-        dispatcher.dispatch(READ, _lastDataReceived);
+        dispatcher.dispatch(SocketType.DATA, _lastDataReceived);
     }
 
 
