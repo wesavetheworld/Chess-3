@@ -9,5 +9,6 @@ public class GameSignals {
     public static const BACK:String = "back";
 
     public static const REFRESH:String = "refresh";
+    public static const CONNECT:String = "connect";
 }
 }

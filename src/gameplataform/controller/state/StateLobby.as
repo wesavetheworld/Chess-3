@@ -49,5 +49,11 @@ public class StateLobby extends BaseState {
         GameMechanics.socket.send({type:SocketType.REFRESH});
     }
 
+    private function onLobbyConnect(opponentID:uint):void {
+        //check if both players are available
+        //if so, change both player's status to playing
+        //start game in both sides
+
+    }
 }
 }

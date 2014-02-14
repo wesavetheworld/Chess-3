@@ -12,18 +12,11 @@ import gameplataform.view.board.Board;
 
 public class StateGame extends BaseState {
 
-    private var board:Board;
-
     public function StateGame(game:Game) {
         super(game, GameState.GAME, null, onEnter, onExit);
     }
 
     private function onEnter():void {
-        board = new Board();
-        board.x = GameData.stageWidth - board.width >> 1;
-        board.y = GameData.stageHeight - board.height >> 1;
-        game.mapController.addChild(board, "board");
-
         setupBoard();
         startGame();
     }
@@ -33,17 +26,19 @@ public class StateGame extends BaseState {
     }
 
     private function setupBoard():void {
-        board.dispatcher.add(Board.MOVE_MADE, onPieceMoved);
-        board.resetBoard(GameData.variables.defaultConfiguration);
+        game.mapController.board.dispatcher.add(Board.MOVE_MADE, onPieceMoved);
+        game.mapController.board.resetBoard(GameData.variables.defaultConfiguration);
     }
 
     private function startGame():void {
-        var socket:ChessSocket = GameMechanics.socket;
-        board.enable();
+        game.mapController.board.enable();
     }
 
-    private function onRead(str:String):void {
-        trace(str);
+    private function onRead(dataString:String):void {
+        var data:Object = JSON.parse(dataString);
+        switch(data.type) {
+
+        }
     }
 
     //==================================

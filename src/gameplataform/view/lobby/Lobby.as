@@ -19,6 +19,7 @@ public class Lobby extends MovieClip {
     public var txtUser:TextField;
 
     public var btnRefresh:MovieClip;
+    public var btnConnect:MovieClip;
 
     public var dispatcher:MultipleSignal;
 
@@ -31,6 +32,8 @@ public class Lobby extends MovieClip {
 
     private var players:Vector.<Item>;
 
+    private var _selectedItem:Item;
+
     public function Lobby() {
         super();
 
@@ -41,6 +44,9 @@ public class Lobby extends MovieClip {
         scroll.setVerticalComponents(scrollTrack, scrollTracker);
 
         ButtonManager.add(btnRefresh, {onClick:onClickRefresh});
+        ButtonManager.add(btnConnect, {onClick:onClickConnect});
+
+        ButtonManager.disable(btnConnect);
     }
 
     public function setData(user:String):void {
@@ -48,32 +54,61 @@ public class Lobby extends MovieClip {
     }
 
     public function refresh(data:Array):void {
-        while(scrollContent.numChildren > 0) {
-            scrollContent.removeChildAt(0);
+        for each (var item:Item in players) {
+            ButtonManager.remove(item);
+            scrollContent.removeChild(item);
         }
 
         players = new Vector.<Item>();
 
         for (var i:int = 0; i < data.length; i++) {
-            var item:Item = new Item(data.id, data.name, data.status);
+            item = new Item(data[i].id, data[i].name, data[i].status);
             scrollContainer.addChild(item);
             item.x = 0;
             item.y = i * item.height;
-
             players.push(item);
+            ButtonManager.add(item, {onClick:onClickItem});
         }
 
         scroll.update();
+
+        setSelectedItem(null);
     }
 
     public function destroy():void {
 
     }
 
+    private function setSelectedItem(item:Item):void {
+        if(item == null) {
+            if(_selectedItem != null)
+                _selectedItem.deSelect();
+            _selectedItem = null;
+        } else if(_selectedItem == null) {
+            _selectedItem = item;
+            _selectedItem.select();
+        } else if(_selectedItem == item) {
+            _selectedItem.deSelect();
+            _selectedItem = null;
+        } else {
+            _selectedItem.deSelect();
+            _selectedItem = item;
+            _selectedItem.select();
+        }
 
+        ButtonManager.setStatus(btnConnect, (_selectedItem != null));
+    }
+
+    private function onClickItem(item:Item):void {
+         setSelectedItem(item);
+    }
 
     private function onClickRefresh(btn:MovieClip):void {
         dispatcher.dispatch(GameSignals.REFRESH);
+    }
+
+    private function onClickConnect(btn:MovieClip):void {
+        dispatcher.dispatch(GameSignals.CONNECT, _selectedItem.id);
     }
 }
 }

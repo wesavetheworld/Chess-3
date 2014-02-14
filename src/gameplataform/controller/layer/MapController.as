@@ -2,6 +2,10 @@
 
 import flash.display.DisplayObjectContainer;
 
+import gameplataform.controller.GameData;
+
+import gameplataform.view.board.Board;
+
 import gameplataform.view.lobby.Lobby;
 
 import gameplataform.view.menu.MainMenu;
@@ -9,8 +13,8 @@ import gameplataform.view.menu.MainMenu;
 public class MapController extends LayerControllerBase {
 
     public var mainMenu:MainMenu;
-
     public var lobby:Lobby;
+    public var board:Board;
 
     public function MapController(inPlaceHolder:DisplayObjectContainer) {
         super(inPlaceHolder, "MapController");
@@ -41,6 +45,22 @@ public class MapController extends LayerControllerBase {
             super.removeChild(lobby);
         }
         lobby = null;
+    }
+
+
+    public function showBoard():void {
+        board = new Board();
+        board.x = GameData.stageWidth - board.width >> 1;
+        board.y = GameData.stageHeight - board.height >> 1;
+        super.addChild(board, "board");
+    }
+
+    public function hideBoard():void {
+        if(board != null && super.placeHolder.contains(board)) {
+
+            super.removeChild(board);
+        }
+        board = null;
     }
 }
 
